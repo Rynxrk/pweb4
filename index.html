@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Student Management</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav>
+    <div class="brand">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="#fff"><path d="M12 3 1 9l11 6 9-4.9V17h2V9L12 3zM5 13.2v3.6c0 1.7 3.1 3.2 7 3.2s7-1.5 7-3.2v-3.6l-7 3.8-7-3.8z"/></svg>
+      Student Management
+    </div>
+    <a href="#">Home</a><a href="#">Students</a><a href="#">About</a>
+    <div class="avatar"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6z"/></svg></div>
+  </nav>
+
+  <main>
+    <section class="card">
+      <h2 id="formTitle">Form Student</h2>
+
+      <label for="nim">NIM</label>
+      <input id="nim" placeholder="Masukkan NIM" inputmode="numeric">
+      <div class="err" id="e-nim"></div>
+
+      <label for="nama">Nama Lengkap</label>
+      <input id="nama" placeholder="Masukkan nama lengkap">
+      <div class="err" id="e-nama"></div>
+
+      <label for="jurusan">Jurusan</label>
+      <select id="jurusan">
+        <option value="">Pilih Jurusan</option>
+        <option>Informatika</option>
+        <option>Sistem Informasi</option>
+        <option>Teknik Komputer</option>
+        <option>Manajemen</option>
+        <option>Akuntansi</option>
+      </select>
+      <div class="err" id="e-jurusan"></div>
+
+      <label for="email">Email</label>
+      <input id="email" type="email" placeholder="Masukkan email">
+      <div class="err" id="e-email"></div>
+
+      <div class="actions">
+        <button class="b-save" id="btnSave">💾 Simpan</button>
+        <button class="b-cancel" id="btnCancel">Batal</button>
+        <button class="b-reset" id="btnReset">⟳ Reset</button>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="head">
+        <h2>Data Mahasiswa</h2>
+        <div class="search"><input id="q" placeholder="Cari mahasiswa..."><span>🔍</span></div>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th class="c">No</th><th>NIM</th><th>Nama</th><th>Jurusan</th><th>Email</th><th class="c">Aksi</th></tr>
+          </thead>
+          <tbody id="tbody"></tbody>
+        </table>
+      </div>
+      <div class="pager"><div id="pager"></div></div>
+    </section>
+  </main>
+
+  <div class="toast" id="toast"></div>
+  <script src="script.js"></script>
+</body>
+</html>
